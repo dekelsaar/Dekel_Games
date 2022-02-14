@@ -26,7 +26,6 @@ def load_game():
                 chosen_difficulty = int(input("Please choose game difficulty from 1 to 5:"))
         except ValueError:
             print("Invalid chars please try again")
-            continue
         if chosen_game == 1:
             MemoryGame.play(chosen_difficulty)
 
