@@ -13,6 +13,5 @@ def add_score(chosen_difficulty):
     except:
         score = open(Path("Scores.txt"), "x")
         score.write(f" ,{points_of_winning}")
-        score.close()
     finally:
         score.close()
