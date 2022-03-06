@@ -27,5 +27,8 @@ def play(chosen_difficulty):
     user_guess = get_guess_from_user(random_num)
     if maxi >= user_guess >= mini:
         print(True)
+        return True
+
     else:
         print(False)
+        return False

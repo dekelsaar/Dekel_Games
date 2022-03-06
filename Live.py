@@ -1,6 +1,7 @@
 import GuessGame
 import MemoryGame
 import CurrencyRouletteGame
+from Score import add_score
 global chosen_difficulty, chosen_game
 
 
@@ -10,6 +11,7 @@ def welcome():
 
 
 def load_game():
+    global chosen_difficulty, chosen_game
     print("\n# Please choose a game to play:"
           "\n    1: Memory Game - a sequence of numbers will appear for 1 second and you have to "
           "guess it back "
@@ -27,13 +29,12 @@ def load_game():
         except ValueError:
             print("Invalid chars please try again")
         if chosen_game == 1:
-            MemoryGame.play(chosen_difficulty)
-
+            if bool(MemoryGame.play(chosen_difficulty)) is True:
+                add_score(chosen_difficulty=chosen_difficulty)
         if chosen_game == 2:
-            GuessGame.play(chosen_difficulty)
-
+            if bool(GuessGame.play(chosen_difficulty)) is True:
+                add_score(chosen_difficulty=chosen_difficulty)
         if chosen_game == 3:
-            CurrencyRouletteGame.play(chosen_difficulty)
+            if bool(CurrencyRouletteGame.play(chosen_difficulty)) is True:
+                add_score(chosen_difficulty=chosen_difficulty)
         return chosen_difficulty, chosen_game
-
-

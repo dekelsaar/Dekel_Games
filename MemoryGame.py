@@ -33,3 +33,7 @@ def play(chosen_difficulty):
     random_numbers = generate_sequence(chosen_difficulty)
     user_numbers = get_list_from_user(chosen_difficulty)
     print(is_list_equal(random_numbers, user_numbers))
+    if is_list_equal(user_numbers=user_numbers, random_numbers=random_numbers):
+        return True
+    else:
+        return False
