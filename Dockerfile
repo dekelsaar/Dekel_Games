@@ -1,8 +1,18 @@
-FROM python:python3.8-alpine
+FROM python:3.8
+
 WORKDIR /app/
+
 COPY ./Scores.txt /app/
 COPY ./*.py /app/
 COPY ./Templates/* /app/Templates/
 COPY ./Tests/* /app/Tests/
-EXPOSE 5001
-CMD python3 Main_Game.py
+
+RUN pip install selenium
+RUN pip install flask
+RUN pip install webdriver-manager
+RUN pip install CurrencyConverter
+
+EXPOSE 5000/tcp
+
+
+CMD python3 Main_Scores.py
