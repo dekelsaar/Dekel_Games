@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-driver = webdriver.Chrome("\chromedriver.exe")
+driver = webdriver.Chrome("Tests/chromedriver")
 
 
 def test_scores_service():
