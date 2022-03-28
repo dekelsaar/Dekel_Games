@@ -7,6 +7,8 @@ COPY ./*.py /app/
 COPY ./templates/* /app/templates/
 COPY ./Tests/* /app/Tests/
 
+RUN pip install selenium
+RUN pip install flask
 
 RUN pip install CurrencyConverter
 
