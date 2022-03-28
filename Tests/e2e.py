@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-driver = webdriver.Chrome(executable_path="/home/dekel/Downloads/World of Games/chromedriver")
+driver = webdriver.Chrome(executable_path="/dekel/Tests/chromedriver")
 
 
 def test_scores_service():
