@@ -4,7 +4,7 @@ WORKDIR /app/
 
 COPY ./Scores.txt /app/
 COPY ./*.py /app/
-COPY ./Templates/* /app/Templates/
+COPY ./templates/* /app/templates/
 COPY ./Tests/* /app/Tests/
 
 RUN pip install selenium
