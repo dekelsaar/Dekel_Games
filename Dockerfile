@@ -9,7 +9,7 @@ COPY ./Tests/* /app/Tests/
 
 RUN pip install selenium
 RUN pip install flask
-
+RUN pip install webdriver-manager
 RUN pip install CurrencyConverter
 
 EXPOSE 5000/tcp
