@@ -2,16 +2,21 @@ from Utils import Path
 
 
 def add_score(chosen_difficulty):
-    global score
-    points_of_winning = str((chosen_difficulty * 3) + 5)
+    points_of_winning = int((chosen_difficulty * 3) + 5)
+
 
     try:
-        score = open(Path("Scores.txt"), "r")
-        score = open(Path("Scores.txt"), "a")
-        score.write(f" ,{points_of_winning}")
-        score.close()
+        s_file = open(Path("Scores.txt"), "r")
+        old_score = s_file.read()
+        old_score = int(old_score)
+        s_file = open(Path("Scores.txt"), "w")
+        score = str(old_score + points_of_winning)
+        s_file.write(str(score))
+
+        s_file.close()
+
     except:
-        score = open(Path("Scores.txt"), "x")
-        score.write(f" ,{points_of_winning}")
-    finally:
-        score.close()
+        s_file = open(Path("Scores.txt"), "x")
+        s_file.write(str(points_of_winning))
+        s_file.close()
+
